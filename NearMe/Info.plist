@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>SPNDMPCAQ14UKMMMYAP1WWUDPUHHQ12ZZ4I2WK0Y31EGEPAZ</string>
+	<key>CLIENT_SECRET</key>
+	<string>HOHPBDHRPN0AKVRMKLLKBMU3G1HCJ5KQB04CYHK2X0HRA2ZQ</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

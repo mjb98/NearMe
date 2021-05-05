@@ -17,9 +17,9 @@
 		8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90F3264307D200B20412 /* Endpoint+URL.swift */; };
 		8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90F826430A3000B20412 /* NetworkController.swift */; };
 		8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90FD26430A8700B20412 /* NetworkControllerImpl.swift */; };
-		8DCF91032643127F00B20412 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91022643127F00B20412 /* VenueService.swift */; };
 		8DCF91092643146E00B20412 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91082643146E00B20412 /* Venue.swift */; };
 		8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91102643156B00B20412 /* VenueServiceImpl.swift */; };
+		8DCF911C26431ED000B20412 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF911B26431ED000B20412 /* VenueService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,9 @@
 		8DCF90F3264307D200B20412 /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
 		8DCF90F826430A3000B20412 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		8DCF90FD26430A8700B20412 /* NetworkControllerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerImpl.swift; sourceTree = "<group>"; };
-		8DCF91022643127F00B20412 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
 		8DCF91082643146E00B20412 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		8DCF91102643156B00B20412 /* VenueServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceImpl.swift; sourceTree = "<group>"; };
+		8DCF911B26431ED000B20412 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 				8DCF90F3264307D200B20412 /* Endpoint+URL.swift */,
 				8DCF90F826430A3000B20412 /* NetworkController.swift */,
 				8DCF90FD26430A8700B20412 /* NetworkControllerImpl.swift */,
-				8DCF91022643127F00B20412 /* VenueService.swift */,
+				8DCF911B26431ED000B20412 /* VenueService.swift */,
 				8DCF91102643156B00B20412 /* VenueServiceImpl.swift */,
 			);
 			path = Networking;
@@ -296,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCF911C26431ED000B20412 /* VenueService.swift in Sources */,
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,
@@ -303,7 +304,6 @@
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
 				8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */,
-				8DCF91032643127F00B20412 /* VenueService.swift in Sources */,
 				8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
