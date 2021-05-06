@@ -30,7 +30,6 @@ extension Endpoint {
         guard let url = components.url else {
             preconditionFailure("Invalid URL components: \(components)")
         }
-        print(url.absoluteURL)
         return url
     }
     

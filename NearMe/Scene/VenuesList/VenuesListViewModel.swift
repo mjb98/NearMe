@@ -10,22 +10,43 @@ import Foundation
 
 class VenuesListViewModel: ObservableObject {
     @Published var venues: [Venue] = []
-    @Published var isMoreDataAvaialbe: Bool  = true
+    @Published var isMoreDataAvaialbe: Bool = true
     @Published var isLoading = false
     @Published var error: Error?
+    @Published var userMustGrantLocationPermision: Bool = false
     private let service: VenueService
     private var subscriptions = Set<AnyCancellable>()
-    private var userCurrentLocation: CLLocationCoordinate2D = .init(latitude: 40.7243,longitude: -74.0018)
+    private var userCurrentLocation: CLLocationCoordinate2D?
+    private var locationFethcer: LocationFetcher
     
-    init(service: VenueService = VenueServiceImpl()) {
+    init(service: VenueService = VenueServiceImpl(), locationFethcer: LocationFetcher = LocationFetcher()) {
         self.service = service
+        self.locationFethcer = locationFethcer
+        prepateLocationFethcer()
+    }
+    
+    private func prepateLocationFethcer() {
+        self.locationFethcer.userdeniedLocationPermision  = { [weak self] in
+            self?.userMustGrantLocationPermision = true
+        }
+        self.locationFethcer.userLocationUpdated = { [weak self] in
+            self?.isMoreDataAvaialbe = true
+            self?.userCurrentLocation = self?.locationFethcer.lastKnownLocation
+            self?.getVenues()
+        }
+        
     }
     
     func getVenues() {
+        guard let userLocation = self.userCurrentLocation else {
+            self.isMoreDataAvaialbe = false
+            self.locationFethcer.start()
+            return
+        }
         if !isLoading {
             error = nil
             isLoading = true
-            service.getNearVenuses(latitude: userCurrentLocation.latitude, longitude: userCurrentLocation.longitude, page: self.venues.count)
+            service.getNearVenuses(latitude: userLocation.latitude, longitude: userLocation.longitude, page: self.venues.count)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [self] (completion) in
                     switch completion {
