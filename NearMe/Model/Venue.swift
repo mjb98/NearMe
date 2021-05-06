@@ -12,3 +12,19 @@ struct Venue: Decodable, Identifiable {
     let name: String
     
 }
+
+extension Venue {
+    struct ExploreResponse: Decodable {
+        let groups: [Group]
+        
+        struct Group: Decodable {
+            let items: [GroupItem]
+            
+            struct GroupItem: Decodable {
+                let venue: Venue
+            }
+        }
+        
+    }
+    
+}

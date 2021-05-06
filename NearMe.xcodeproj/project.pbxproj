@@ -20,6 +20,8 @@
 		8DCF91092643146E00B20412 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91082643146E00B20412 /* Venue.swift */; };
 		8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91102643156B00B20412 /* VenueServiceImpl.swift */; };
 		8DCF911C26431ED000B20412 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF911B26431ED000B20412 /* VenueService.swift */; };
+		8DCF91212643216100B20412 /* BaseResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91202643216100B20412 /* BaseResponses.swift */; };
+		8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF9126264405AA00B20412 /* Bool+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		8DCF91082643146E00B20412 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		8DCF91102643156B00B20412 /* VenueServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueServiceImpl.swift; sourceTree = "<group>"; };
 		8DCF911B26431ED000B20412 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
+		8DCF91202643216100B20412 /* BaseResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponses.swift; sourceTree = "<group>"; };
+		8DCF9126264405AA00B20412 /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				8DCF90EA2643068700B20412 /* Networking */,
 				8D60219D26415CE6008F7D7A /* NearMeApp.swift */,
 				8D60219F26415CE6008F7D7A /* ContentView.swift */,
+				8DCF91252644058700B20412 /* Utils */,
 				8D6021A126415CEA008F7D7A /* Assets.xcassets */,
 				8D6021A626415CEA008F7D7A /* Info.plist */,
 				8D6021A326415CEA008F7D7A /* Preview Content */,
@@ -149,12 +154,9 @@
 		8DCF90EA2643068700B20412 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				8DCF90EB2643073200B20412 /* Endpoint.swift */,
-				8DCF90F3264307D200B20412 /* Endpoint+URL.swift */,
-				8DCF90F826430A3000B20412 /* NetworkController.swift */,
-				8DCF90FD26430A8700B20412 /* NetworkControllerImpl.swift */,
-				8DCF911B26431ED000B20412 /* VenueService.swift */,
-				8DCF91102643156B00B20412 /* VenueServiceImpl.swift */,
+				8DCF91312644060600B20412 /* Service */,
+				8DCF9130264405ED00B20412 /* NetworkController */,
+				8DCF912F264405E300B20412 /* Endpoint */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -162,9 +164,53 @@
 		8DCF9107264313CD00B20412 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8DCF912E264405BA00B20412 /* BaseModels */,
 				8DCF91082643146E00B20412 /* Venue.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8DCF91252644058700B20412 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF9126264405AA00B20412 /* Bool+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8DCF912E264405BA00B20412 /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF91202643216100B20412 /* BaseResponses.swift */,
+			);
+			path = BaseModels;
+			sourceTree = "<group>";
+		};
+		8DCF912F264405E300B20412 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF90EB2643073200B20412 /* Endpoint.swift */,
+				8DCF90F3264307D200B20412 /* Endpoint+URL.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		8DCF9130264405ED00B20412 /* NetworkController */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF90F826430A3000B20412 /* NetworkController.swift */,
+				8DCF90FD26430A8700B20412 /* NetworkControllerImpl.swift */,
+			);
+			path = NetworkController;
+			sourceTree = "<group>";
+		};
+		8DCF91312644060600B20412 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF911B26431ED000B20412 /* VenueService.swift */,
+				8DCF91102643156B00B20412 /* VenueServiceImpl.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCF911C26431ED000B20412 /* VenueService.swift in Sources */,
+				8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */,
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
+				8DCF91212643216100B20412 /* BaseResponses.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,
 				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,

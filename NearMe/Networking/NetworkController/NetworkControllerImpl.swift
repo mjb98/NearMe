@@ -9,12 +9,10 @@ import Combine
 import Foundation
 
 final class NetworkControllerImpl: NetworkController {
-    let decoder: JSONDecoder = JSONDecoder()
-    
     func get<T: Decodable>(type: T.Type,
                            url: URL,
                            headers: Headers
-    ) -> AnyPublisher<T, Error> {
+    ) -> ResultPublisher<T> {
         
         var urlRequest = URLRequest(url: url)
         headers.forEach { (key, value) in
@@ -25,7 +23,7 @@ final class NetworkControllerImpl: NetworkController {
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map(\.data)
-            .decode(type: T.self, decoder: decoder)
+            .decode(type: NetworkResponse<T>.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
     

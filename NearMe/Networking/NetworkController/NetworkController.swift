@@ -8,11 +8,11 @@
 import Combine
 import Foundation
 
-protocol NetworkController: class {
+protocol NetworkController {
     typealias Headers = [String: Any]
  
     func get<T>(type: T.Type,
                 url: URL,
                 headers: Headers
-    ) -> AnyPublisher<T, Error> where T: Decodable
+    ) -> ResultPublisher<T> where T: Decodable
 }

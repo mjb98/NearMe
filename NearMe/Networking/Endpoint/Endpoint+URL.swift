@@ -13,7 +13,12 @@ extension Endpoint {
         guard let clientID =  Bundle.main.infoDictionary?["CLIENT_ID"] as? String,let clientSecret = Bundle.main.infoDictionary?["CLIENT_SECRET"] as? String else {
             return []
         }
-        return [URLQueryItem(name: "client_id", value: clientID), URLQueryItem(name: "client_secret", value: clientSecret)]
+        let lastWeekDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let stringDate = dateFormatter.string(from: lastWeekDate)
+        return [URLQueryItem(name: "client_id", value: clientID), URLQueryItem(name: "client_secret", value: clientSecret), .init(name: "v", value: stringDate)]
     }
     var url: URL {
         var components = URLComponents()
@@ -25,6 +30,7 @@ extension Endpoint {
         guard let url = components.url else {
             preconditionFailure("Invalid URL components: \(components)")
         }
+        print(url.absoluteURL)
         return url
     }
     
@@ -34,8 +40,10 @@ extension Endpoint {
 }
 
 extension Endpoint {
-    static func nearVenus(latitude: Double, longitude: Double) -> Self {
-        let queryParam = URLQueryItem(name: "ll", value: "\(latitude),\(longitude)")
-        return Endpoint(path: "/search", queryItems: [queryParam])
+    static func nearVenus(latitude: Double, longitude: Double, page: Int, sortByDistance: Bool = true) -> Self {
+        let queryParams = [URLQueryItem(name: "ll", value: "\(latitude),\(longitude)"), URLQueryItem(name: "sortByDistance", value: String(sortByDistance.intValue)), URLQueryItem(name: "offset", value: String(page))]
+        return Endpoint(path: "/explore", queryItems: queryParams)
     }
 }
+
+
