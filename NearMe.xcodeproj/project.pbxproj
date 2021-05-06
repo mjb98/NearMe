@@ -22,6 +22,7 @@
 		8DCF911C26431ED000B20412 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF911B26431ED000B20412 /* VenueService.swift */; };
 		8DCF91212643216100B20412 /* BaseResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91202643216100B20412 /* BaseResponses.swift */; };
 		8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF9126264405AA00B20412 /* Bool+Extension.swift */; };
+		8DCF91362644075A00B20412 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91352644075A00B20412 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8DCF911B26431ED000B20412 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
 		8DCF91202643216100B20412 /* BaseResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponses.swift; sourceTree = "<group>"; };
 		8DCF9126264405AA00B20412 /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
+		8DCF91352644075A00B20412 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				8DCF91202643216100B20412 /* BaseResponses.swift */,
+				8DCF91352644075A00B20412 /* NetworkError.swift */,
 			);
 			path = BaseModels;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
+				8DCF91362644075A00B20412 /* NetworkError.swift in Sources */,
 				8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */,
 				8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */,
 			);

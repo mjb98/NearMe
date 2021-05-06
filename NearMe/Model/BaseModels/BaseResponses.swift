@@ -13,6 +13,7 @@ struct NetworkResponse<T: Decodable>: Decodable {
     
     struct Meta: Codable {
         let code: Int
+        let errorDetail: String?
     }
 }
 
