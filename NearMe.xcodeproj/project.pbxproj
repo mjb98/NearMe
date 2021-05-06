@@ -23,6 +23,8 @@
 		8DCF91212643216100B20412 /* BaseResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91202643216100B20412 /* BaseResponses.swift */; };
 		8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF9126264405AA00B20412 /* Bool+Extension.swift */; };
 		8DCF91362644075A00B20412 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF91352644075A00B20412 /* NetworkError.swift */; };
+		8DCF913B26440A0C00B20412 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF913A26440A0C00B20412 /* Location.swift */; };
+		8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF914126440C1C00B20412 /* Location+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		8DCF91202643216100B20412 /* BaseResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponses.swift; sourceTree = "<group>"; };
 		8DCF9126264405AA00B20412 /* Bool+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extension.swift"; sourceTree = "<group>"; };
 		8DCF91352644075A00B20412 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8DCF913A26440A0C00B20412 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8DCF914126440C1C00B20412 /* Location+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 			children = (
 				8DCF912E264405BA00B20412 /* BaseModels */,
 				8DCF91082643146E00B20412 /* Venue.swift */,
+				8DCF913A26440A0C00B20412 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,7 +180,7 @@
 		8DCF91252644058700B20412 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8DCF9126264405AA00B20412 /* Bool+Extension.swift */,
+				8DCF913F26440BF100B20412 /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +219,15 @@
 				8DCF91102643156B00B20412 /* VenueServiceImpl.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		8DCF913F26440BF100B20412 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF9126264405AA00B20412 /* Bool+Extension.swift */,
+				8DCF914126440C1C00B20412 /* Location+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,9 +365,11 @@
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
 				8DCF91212643216100B20412 /* BaseResponses.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,
+				8DCF913B26440A0C00B20412 /* Location.swift in Sources */,
 				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
+				8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */,
 				8DCF91362644075A00B20412 /* NetworkError.swift in Sources */,
 				8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */,
 				8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */,

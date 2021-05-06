@@ -10,6 +10,7 @@ import Foundation
 struct Venue: Decodable, Identifiable {
     let id: String
     let name: String
+    let location: Location?
     
 }
 
