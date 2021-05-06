@@ -22,6 +22,9 @@ final class NetworkControllerImpl: NetworkController {
         }
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .timeout(1, scheduler: RunLoop.main, options: nil, customError: {
+                return URLError(.timedOut)
+            })
             .map(\.data)
             .decode(type: NetworkResponse<T>.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()

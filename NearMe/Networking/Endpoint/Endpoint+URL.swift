@@ -40,8 +40,8 @@ extension Endpoint {
 }
 
 extension Endpoint {
-    static func nearVenus(latitude: Double, longitude: Double, page: Int, sortByDistance: Bool = true) -> Self {
-        let queryParams = [URLQueryItem(name: "ll", value: "\(latitude),\(longitude)"), URLQueryItem(name: "sortByDistance", value: String(sortByDistance.intValue)), URLQueryItem(name: "offset", value: String(page))]
+    static func nearVenus(latitude: Double, longitude: Double, offset: Int, sortByDistance: Bool = true) -> Self {
+        let queryParams = [URLQueryItem(name: "ll", value: "\(latitude),\(longitude)"), URLQueryItem(name: "sortByDistance", value: String(sortByDistance.intValue)), URLQueryItem(name: "offset", value: String(offset))]
         return Endpoint(path: "/explore", queryItems: queryParams)
     }
 }

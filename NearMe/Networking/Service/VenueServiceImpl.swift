@@ -15,7 +15,7 @@ import Foundation
     }
     
     func getNearVenuses(latitude: Double, longitude: Double, page: Int) -> ResultPublisher<Venue.ExploreResponse> {
-        let endpoint = Endpoint.nearVenus(latitude: latitude, longitude: longitude, page: page)
+        let endpoint = Endpoint.nearVenus(latitude: latitude, longitude: longitude, offset: page)
         return networkController.get(type: Venue.ExploreResponse.self, url: endpoint.url, headers: [:])
         
     }

@@ -17,6 +17,7 @@ struct Venue: Decodable, Identifiable {
 extension Venue {
     struct ExploreResponse: Decodable {
         let groups: [Group]
+        let totalResults: Int
         
         struct Group: Decodable {
             let items: [GroupItem]

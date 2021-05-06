@@ -27,6 +27,7 @@
 		8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF914126440C1C00B20412 /* Location+Extension.swift */; };
 		8DCF914B26440DDA00B20412 /* VenuesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF914A26440DDA00B20412 /* VenuesListView.swift */; };
 		8DCF915126440DF900B20412 /* VenuesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF915026440DF900B20412 /* VenuesListViewModel.swift */; };
+		8DCF915E26445D3E00B20412 /* VenueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF915D26445D3D00B20412 /* VenueRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8DCF914126440C1C00B20412 /* Location+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extension.swift"; sourceTree = "<group>"; };
 		8DCF914A26440DDA00B20412 /* VenuesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesListView.swift; sourceTree = "<group>"; };
 		8DCF915026440DF900B20412 /* VenuesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesListViewModel.swift; sourceTree = "<group>"; };
+		8DCF915D26445D3D00B20412 /* VenueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			children = (
 				8DCF914A26440DDA00B20412 /* VenuesListView.swift */,
 				8DCF915026440DF900B20412 /* VenuesListViewModel.swift */,
+				8DCF915D26445D3D00B20412 /* VenueRow.swift */,
 			);
 			path = VenuesList;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				8DCF915126440DF900B20412 /* VenuesListViewModel.swift in Sources */,
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
+				8DCF915E26445D3E00B20412 /* VenueRow.swift in Sources */,
 				8DCF914B26440DDA00B20412 /* VenuesListView.swift in Sources */,
 				8DCF91212643216100B20412 /* BaseResponses.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,

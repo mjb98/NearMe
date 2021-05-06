@@ -9,7 +9,7 @@ import Foundation
 
 struct NetworkResponse<T: Decodable>: Decodable {
     let meta: Meta
-    let response: T
+    let response: T?
     
     struct Meta: Codable {
         let code: Int
