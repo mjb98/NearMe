@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Venue: Decodable, Identifiable {
+struct Venue: Codable, Identifiable {
     let id: String
     let name: String
     let location: Location?
@@ -15,14 +15,14 @@ struct Venue: Decodable, Identifiable {
 }
 
 extension Venue {
-    struct ExploreResponse: Decodable {
+    struct ExploreResponse: Codable {
         let groups: [Group]
         let totalResults: Int
         
-        struct Group: Decodable {
+        struct Group: Codable {
             let items: [GroupItem]
             
-            struct GroupItem: Decodable {
+            struct GroupItem: Codable {
                 let venue: Venue
             }
         }

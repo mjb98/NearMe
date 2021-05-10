@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Location: Decodable {
+struct Location: Codable {
     let address: String?
     let latitude, longitude: Double
     let distance: Int
