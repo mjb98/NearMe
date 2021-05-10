@@ -11,7 +11,9 @@ import SwiftUI
 struct NearMeApp: App {
     var body: some Scene {
         WindowGroup {
-            VenuesListView()
+            LocationPermisionView()
         }
     }
+    
+    
 }

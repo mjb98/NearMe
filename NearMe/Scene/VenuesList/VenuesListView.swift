@@ -11,10 +11,6 @@ struct VenuesListView: View {
     @ObservedObject var viewModel: VenuesListViewModel
     var body: some View {
         
-        let isLocationUnavaiable = Binding<Bool>(
-            get: { self.viewModel.userMustGrantLocationPermision },
-            set: {_ in }
-               )
         NavigationView {
             List {
                 ForEach(viewModel.venues) { venue in
@@ -50,29 +46,10 @@ struct VenuesListView: View {
             }
             .navigationBarTitle("Near places")
         }
-        .onAppear {
-            
-        }
-        .alert(isPresented: isLocationUnavaiable, content: {
-            Alert(
-                title: Text("We need your location, please go to setting and grant location service permision"),
-              
-                primaryButton: .default(Text("Go to Setting")) {
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                                return
-                            }
-                    UIApplication.shared.open(settingsUrl, completionHandler: { _ in
-                               
-                               })
-                }, secondaryButton: .destructive(Text("Exit"), action: {
-                    exit(0)
-                })
-                
-            )
-        })
+      
     }
     
-    init(viewModel: VenuesListViewModel = VenuesListViewModel()) {
+    init(viewModel: VenuesListViewModel) {
         self.viewModel = viewModel
         
     }
@@ -80,7 +57,7 @@ struct VenuesListView: View {
 
 struct VenuesListView_Previews: PreviewProvider {
     static var previews: some View {
-        VenuesListView()
+        VenuesListView(viewModel: .init(userLocation: .init()))
         
     }
 }

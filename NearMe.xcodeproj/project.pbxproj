@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D22946B2649CB940072BD08 /* LocationPermisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22946A2649CB940072BD08 /* LocationPermisionView.swift */; };
+		8D2294732649CBD70072BD08 /* LocationPermisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294722649CBD70072BD08 /* LocationPermisonViewModel.swift */; };
+		8D2294792649E7A30072BD08 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294782649E7A20072BD08 /* StorageController.swift */; };
 		8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219D26415CE6008F7D7A /* NearMeApp.swift */; };
 		8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219F26415CE6008F7D7A /* ContentView.swift */; };
 		8D6021A226415CEA008F7D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A126415CEA008F7D7A /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D22946A2649CB940072BD08 /* LocationPermisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermisionView.swift; sourceTree = "<group>"; };
+		8D2294722649CBD70072BD08 /* LocationPermisonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermisonViewModel.swift; sourceTree = "<group>"; };
+		8D2294782649E7A20072BD08 /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 		8D60219A26415CE6008F7D7A /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60219D26415CE6008F7D7A /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		8D60219F26415CE6008F7D7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +110,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D2294692649CB790072BD08 /* LocationPermisonView */ = {
+			isa = PBXGroup;
+			children = (
+				8D22946A2649CB940072BD08 /* LocationPermisionView.swift */,
+				8D2294722649CBD70072BD08 /* LocationPermisonViewModel.swift */,
+			);
+			path = LocationPermisonView;
+			sourceTree = "<group>";
+		};
+		8D2294772649E7630072BD08 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8D2294782649E7A20072BD08 /* StorageController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		8D60219126415CE6008F7D7A = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +150,7 @@
 		8D60219C26415CE6008F7D7A /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				8D2294772649E7630072BD08 /* Persistence */,
 				8DCF914926440D9C00B20412 /* Scene */,
 				8DCF9107264313CD00B20412 /* Model */,
 				8DCF90EA2643068700B20412 /* Networking */,
@@ -243,6 +267,7 @@
 		8DCF914926440D9C00B20412 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				8D2294692649CB790072BD08 /* LocationPermisonView */,
 				8DCF914F26440DE500B20412 /* VenuesList */,
 			);
 			path = Scene;
@@ -391,6 +416,8 @@
 				8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */,
 				8DCF915126440DF900B20412 /* VenuesListViewModel.swift in Sources */,
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
+				8D2294732649CBD70072BD08 /* LocationPermisonViewModel.swift in Sources */,
+				8D2294792649E7A30072BD08 /* StorageController.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
 				8DCF915E26445D3E00B20412 /* VenueRow.swift in Sources */,
 				8DCF914B26440DDA00B20412 /* VenuesListView.swift in Sources */,
@@ -403,6 +430,7 @@
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
 				8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */,
 				8DCF91362644075A00B20412 /* NetworkError.swift in Sources */,
+				8D22946B2649CB940072BD08 /* LocationPermisionView.swift in Sources */,
 				8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */,
 				8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */,
 			);

@@ -10,9 +10,10 @@ import Foundation
 
 class LocationFetcher: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
-    var lastKnownLocation: CLLocationCoordinate2D?
     var userdeniedLocationPermision: (() -> Void)?
-    var userLocationUpdated: (() -> Void)?
+    var userLocationUpdated: ((CLLocationCoordinate2D?) -> Void)?
+    var errorOccuredWhenFetchingLocation: ((LocationError) -> Void)?
+   
 
     override init() {
         super.init()
@@ -21,24 +22,25 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
 
     func start() {
         manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastKnownLocation = locations.first?.coordinate
-        userLocationUpdated?()
+        userLocationUpdated?(locations.first?.coordinate)
         manager.stopUpdatingLocation()
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .denied {
-            userdeniedLocationPermision?()
+            errorOccuredWhenFetchingLocation?(.userDenied)
             return
         }
         manager.startUpdatingLocation()
         return
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        start()
+        if manager.authorizationStatus != .denied, manager.location == nil, manager.authorizationStatus != .notDetermined {
+            errorOccuredWhenFetchingLocation?(.error)
+        }
+      
     }
 
 }
