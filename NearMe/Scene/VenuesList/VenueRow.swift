@@ -16,7 +16,7 @@ struct VenueRow: View {
                 Spacer()
             }
             HStack {
-                Text(venue.location?.address ?? "")
+                Text(venue.location.address ?? "")
                     .font(.caption2)
                     .foregroundColor(.gray)
                 

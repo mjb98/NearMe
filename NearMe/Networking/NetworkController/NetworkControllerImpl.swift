@@ -15,6 +15,7 @@ final class NetworkControllerImpl: NetworkController {
     ) -> ResultPublisher<T> {
         
         var urlRequest = URLRequest(url: url)
+        dump(urlRequest)
         headers.forEach { (key, value) in
             if let value = value as? String {
                 urlRequest.setValue(value, forHTTPHeaderField: key)

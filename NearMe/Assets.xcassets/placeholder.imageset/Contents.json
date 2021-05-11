@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "placeholder-1-1-2.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "turtlerock@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },

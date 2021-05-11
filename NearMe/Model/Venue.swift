@@ -10,7 +10,7 @@ import Foundation
 struct Venue: Codable, Identifiable {
     let id: String
     let name: String
-    let location: Location?
+    let location: Location
     let description: String?
     let bestPhoto: Photo?
     
@@ -29,6 +29,10 @@ extension Venue {
             }
         }
         
+    }
+    
+    struct DetailResponse: Codable {
+        let venue: Venue?
     }
     
     struct Photo: Codable {

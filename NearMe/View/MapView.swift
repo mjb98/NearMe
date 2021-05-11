@@ -18,6 +18,10 @@ struct MapView: View {
                 setRegion(coordinate)
             }
     }
+    
+    init(location: Coordinate) {
+        self.coordinate = .init(latitude: location.latitude, longitude: location.longitude)
+    }
 
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
         region = MKCoordinateRegion(
@@ -25,6 +29,7 @@ struct MapView: View {
             span: MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0)
         )
     }
+    
 }
 
 

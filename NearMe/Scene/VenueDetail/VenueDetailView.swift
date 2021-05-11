@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct VenueDetailView: View {
-    var venue: Venue
+  @ObservedObject var viewModel: VenueDetailViewModel
 
     var body: some View {
+        let venue = viewModel.venue
         ScrollView {
-            MapView(coordinate: .init(latitude: venue.location!.latitude, longitude: venue.location!.longitude))
+            MapView(location: venue.location.coordinate)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: min(UIScreen.main.bounds.height/3, 300))
 
-            CircleImage(image: .init("turtlerock"))
-                .offset(y: -130)
+            CircleImage(image: .init("placeholder"))
+                .offset(y: -125)
                 .padding(.bottom, -130)
                 
                 
@@ -27,9 +28,9 @@ struct VenueDetailView: View {
                     .font(.title)
 
                 HStack {
-                    Text(venue.location?.address ?? "")
+                    Text(venue.location.address ?? "")
                     Spacer()
-                    Text(venue.location?.state ?? "")
+                    Text(venue.location.state ?? "")
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
@@ -38,12 +39,16 @@ struct VenueDetailView: View {
 
                 Text("About \(venue.name)")
                     .font(.title2)
-                Text(venue.location?.address ?? "")
+                Text(venue.description ?? "")
             }
             .padding()
         }
         .navigationTitle(venue.name)
         .navigationBarTitleDisplayMode(.inline)
+        
+        .onAppear {
+            viewModel.getVenueDetail()
+        }
     }
 }
 

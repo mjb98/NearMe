@@ -46,8 +46,7 @@ extension Endpoint {
     }
     
     static func venueDetail(id: String) -> Self {
-        let queryParams = [URLQueryItem(name: "VENUE_ID", value: id)]
-        return Endpoint(path: "/explore", queryItems: queryParams)
+        return Endpoint(path: "/\(id)", queryItems: [])
     }
 }
 

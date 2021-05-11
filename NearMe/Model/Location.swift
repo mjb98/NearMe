@@ -10,7 +10,7 @@ import Foundation
 struct Location: Codable {
     let address: String?
     let latitude, longitude: Double
-    let distance: Int
+    let distance: Int?
     let postalCode: String?
     let country, state, city: String?
     let formattedAddress: [String]

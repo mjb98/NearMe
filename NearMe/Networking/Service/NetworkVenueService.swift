@@ -19,9 +19,9 @@ struct NetworkVenueService: VenueService {
         return networkController.get(type: Venue.ExploreResponse.self, url: endpoint.url, headers: [:])
     }
     
-    func getVenuesDetail(id: String) -> ResultPublisher<Venue> {
+    func getVenuesDetail(id: String) -> ResultPublisher<Venue.DetailResponse> {
         let endpoint = Endpoint.venueDetail(id: id)
-        return networkController.get(type: Venue.self, url: endpoint.url, headers: [:])
+        return networkController.get(type: Venue.DetailResponse.self, url: endpoint.url, headers: [:])
     }
     
     

@@ -25,6 +25,8 @@
 		8D6021A526415CEA008F7D7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A426415CEA008F7D7A /* Preview Assets.xcassets */; };
 		8D6021B026415CEB008F7D7A /* NearMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6021AF26415CEB008F7D7A /* NearMeTests.swift */; };
 		8D6021BB26415CEB008F7D7A /* NearMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6021BA26415CEB008F7D7A /* NearMeUITests.swift */; };
+		8D70B637264B36800056D436 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70B636264B36800056D436 /* ImageLoader.swift */; };
+		8D70B63C264B36D60056D436 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70B63B264B36D60056D436 /* AsyncImage.swift */; };
 		8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90EB2643073200B20412 /* Endpoint.swift */; };
 		8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90F3264307D200B20412 /* Endpoint+URL.swift */; };
 		8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF90F826430A3000B20412 /* NetworkController.swift */; };
@@ -85,6 +87,8 @@
 		8D6021B626415CEB008F7D7A /* NearMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6021BA26415CEB008F7D7A /* NearMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeUITests.swift; sourceTree = "<group>"; };
 		8D6021BC26415CEB008F7D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D70B636264B36800056D436 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		8D70B63B264B36D60056D436 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		8DCF90EB2643073200B20412 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8DCF90F3264307D200B20412 /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
 		8DCF90F826430A3000B20412 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		8D2294A1264B0CA30072BD08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D70B63B264B36D60056D436 /* AsyncImage.swift */,
 				8D2294A2264B0CC60072BD08 /* MapView.swift */,
 				8D2294A7264B0CEF0072BD08 /* CircleImage.swift */,
 			);
@@ -254,6 +259,7 @@
 				8DCF913F26440BF100B20412 /* Extensions */,
 				8DCF916526446F4500B20412 /* LocationFetcher.swift */,
 				8D2294822649EB320072BD08 /* UserDefault.swift */,
+				8D70B636264B36800056D436 /* ImageLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				8D2294902649EFB70072BD08 /* Coordinate+distanceFrom.swift in Sources */,
 				8D229495264AE70E0072BD08 /* Coordinate.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
+				8D70B63C264B36D60056D436 /* AsyncImage.swift in Sources */,
 				8DCF915E26445D3E00B20412 /* VenueRow.swift in Sources */,
 				8DCF914B26440DDA00B20412 /* VenuesListView.swift in Sources */,
 				8DCF91212643216100B20412 /* NetworkResponse.swift in Sources */,
@@ -482,6 +489,7 @@
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
 				8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */,
 				8DCF91362644075A00B20412 /* NetworkError.swift in Sources */,
+				8D70B637264B36800056D436 /* ImageLoader.swift in Sources */,
 				8D22946B2649CB940072BD08 /* LocationPermisionView.swift in Sources */,
 				8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */,
 				8DCF90F926430A3000B20412 /* NetworkController.swift in Sources */,

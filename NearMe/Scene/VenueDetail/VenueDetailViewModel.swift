@@ -11,7 +11,7 @@ import Foundation
 class VenueDetailViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     private var service: VenueService
-    private var venue: Venue
+    @Published var venue: Venue
     @Published var isLoading = false
     @Published var error: Error?
     
@@ -29,12 +29,13 @@ class VenueDetailViewModel: ObservableObject {
                 self.isLoading = false
                 switch result {
                 case .success(let data):
-                    guard let venue = data.response else {
+                    guard let venue = data.response?.venue else {
                         self.error = NetworkError.badRequest(description: data.meta.errorDetail ?? "SomeThing went wrong")
                         return
                     }
                     self.venue = venue
                 case .failure(let error):
+                    print(error)
                     self.error = error
                     
                 }
