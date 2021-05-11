@@ -34,7 +34,6 @@ struct LocationPermisionView: View {
                
                 } else {
                     VStack {
-                        Text("Fetching your location")
                         ProgressView()
                     }.offset(y: -50)
                 }

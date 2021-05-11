@@ -20,7 +20,6 @@
 		8D2294B5264B0DAD0072BD08 /* VenueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294B4264B0DAD0072BD08 /* VenueDetailView.swift */; };
 		8D2294C0264B26440072BD08 /* VenueDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294BF264B26440072BD08 /* VenueDetailViewModel.swift */; };
 		8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219D26415CE6008F7D7A /* NearMeApp.swift */; };
-		8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219F26415CE6008F7D7A /* ContentView.swift */; };
 		8D6021A226415CEA008F7D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A126415CEA008F7D7A /* Assets.xcassets */; };
 		8D6021A526415CEA008F7D7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A426415CEA008F7D7A /* Preview Assets.xcassets */; };
 		8D6021B026415CEB008F7D7A /* NearMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6021AF26415CEB008F7D7A /* NearMeTests.swift */; };
@@ -77,7 +76,6 @@
 		8D2294BF264B26440072BD08 /* VenueDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewModel.swift; sourceTree = "<group>"; };
 		8D60219A26415CE6008F7D7A /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60219D26415CE6008F7D7A /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
-		8D60219F26415CE6008F7D7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D6021A126415CEA008F7D7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6021A426415CEA008F7D7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D6021A626415CEA008F7D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,15 +189,14 @@
 		8D60219C26415CE6008F7D7A /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				8D70B643264B41760056D436 /* Application */,
 				8D2294A1264B0CA30072BD08 /* View */,
 				8D2294772649E7630072BD08 /* Persistence */,
 				8DCF914926440D9C00B20412 /* Scene */,
 				8DCF9107264313CD00B20412 /* Model */,
 				8DCF90EA2643068700B20412 /* Networking */,
-				8D60219D26415CE6008F7D7A /* NearMeApp.swift */,
-				8D60219F26415CE6008F7D7A /* ContentView.swift */,
+				8D70B647264B418D0056D436 /* Resource */,
 				8DCF91252644058700B20412 /* Utils */,
-				8D6021A126415CEA008F7D7A /* Assets.xcassets */,
 				8D6021A626415CEA008F7D7A /* Info.plist */,
 				8D6021A326415CEA008F7D7A /* Preview Content */,
 			);
@@ -230,6 +227,22 @@
 				8D6021BC26415CEB008F7D7A /* Info.plist */,
 			);
 			path = NearMeUITests;
+			sourceTree = "<group>";
+		};
+		8D70B643264B41760056D436 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8D60219D26415CE6008F7D7A /* NearMeApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8D70B647264B418D0056D436 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8D6021A126415CEA008F7D7A /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		8DCF90EA2643068700B20412 /* Networking */ = {
@@ -484,7 +497,6 @@
 				8D2294A8264B0CEF0072BD08 /* CircleImage.swift in Sources */,
 				8DCF913B26440A0C00B20412 /* Location.swift in Sources */,
 				8D22948B2649ED3F0072BD08 /* Publisher+sinkToResult.swift in Sources */,
-				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,
 				8DCF914226440C1C00B20412 /* Location+Extension.swift in Sources */,

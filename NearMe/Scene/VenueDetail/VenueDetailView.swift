@@ -16,10 +16,19 @@ struct VenueDetailView: View {
             MapView(location: venue.location.coordinate)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: min(UIScreen.main.bounds.height/3, 300))
-
-            CircleImage(image: .init("placeholder"))
-                .offset(y: -125)
+            
+            if let url = viewModel.imageUrl {
+                AsyncImage(url: url) {
+                    CircleImage(image: .init("placeholder"))
+                        
+                }.offset(y: -125)
                 .padding(.bottom, -130)
+            } else {
+                CircleImage(image: .init("placeholder"))
+                    .offset(y: -125)
+                    .padding(.bottom, -130)
+            }
+          
                 
                 
 
@@ -39,7 +48,16 @@ struct VenueDetailView: View {
 
                 Text("About \(venue.name)")
                     .font(.title2)
-                Text(venue.description ?? "")
+                if viewModel.isLoading {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                } else {
+                    Text(venue.description ?? "")
+                }
+                
             }
             .padding()
         }
@@ -50,6 +68,7 @@ struct VenueDetailView: View {
             viewModel.getVenueDetail()
         }
     }
+    
 }
 
 

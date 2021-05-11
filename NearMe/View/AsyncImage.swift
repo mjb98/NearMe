@@ -25,13 +25,15 @@ struct AsyncImage<Placeholder: View>: View {
            Group {
                if loader.image != nil {
                    Image(uiImage: loader.image!)
-                       .resizable()
+                       
                } else {
-                ZStack {
+                ZStack(alignment: .top) {
                     placeholder
                     if loader.isLoading {
                         ProgressView()
+                           
                     }
+                    
                 }
                }
            }

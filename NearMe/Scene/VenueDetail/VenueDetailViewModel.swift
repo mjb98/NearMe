@@ -14,6 +14,14 @@ class VenueDetailViewModel: ObservableObject {
     @Published var venue: Venue
     @Published var isLoading = false
     @Published var error: Error?
+     var imageUrl: URL? {
+        if let photo = venue.bestPhoto {
+            print( "\(photo.prefix)150\(photo.prefix)")
+            return URL(string: "\(photo.prefix)150\(photo.suffix)")
+        }
+        return nil
+       
+    }
     
      init(service: VenueService = NetworkVenueService(), venue: Venue) {
         self.service = service
@@ -35,7 +43,6 @@ class VenueDetailViewModel: ObservableObject {
                     }
                     self.venue = venue
                 case .failure(let error):
-                    print(error)
                     self.error = error
                     
                 }
