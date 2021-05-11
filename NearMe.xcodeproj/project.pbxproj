@@ -15,6 +15,9 @@
 		8D22948B2649ED3F0072BD08 /* Publisher+sinkToResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22948A2649ED3F0072BD08 /* Publisher+sinkToResult.swift */; };
 		8D2294902649EFB70072BD08 /* Coordinate+distanceFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22948F2649EFB70072BD08 /* Coordinate+distanceFrom.swift */; };
 		8D229495264AE70E0072BD08 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D229494264AE70E0072BD08 /* Coordinate.swift */; };
+		8D2294A3264B0CC60072BD08 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294A2264B0CC60072BD08 /* MapView.swift */; };
+		8D2294A8264B0CEF0072BD08 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294A7264B0CEF0072BD08 /* CircleImage.swift */; };
+		8D2294B5264B0DAD0072BD08 /* VenueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294B4264B0DAD0072BD08 /* VenueDetailView.swift */; };
 		8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219D26415CE6008F7D7A /* NearMeApp.swift */; };
 		8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219F26415CE6008F7D7A /* ContentView.swift */; };
 		8D6021A226415CEA008F7D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A126415CEA008F7D7A /* Assets.xcassets */; };
@@ -65,6 +68,9 @@
 		8D22948A2649ED3F0072BD08 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
 		8D22948F2649EFB70072BD08 /* Coordinate+distanceFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+distanceFrom.swift"; sourceTree = "<group>"; };
 		8D229494264AE70E0072BD08 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		8D2294A2264B0CC60072BD08 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8D2294A7264B0CEF0072BD08 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		8D2294B4264B0DAD0072BD08 /* VenueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailView.swift; sourceTree = "<group>"; };
 		8D60219A26415CE6008F7D7A /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60219D26415CE6008F7D7A /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		8D60219F26415CE6008F7D7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +143,23 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		8D2294A0264B0C380072BD08 /* VenueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8D2294B4264B0DAD0072BD08 /* VenueDetailView.swift */,
+			);
+			path = VenueDetail;
+			sourceTree = "<group>";
+		};
+		8D2294A1264B0CA30072BD08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D2294A2264B0CC60072BD08 /* MapView.swift */,
+				8D2294A7264B0CEF0072BD08 /* CircleImage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8D60219126415CE6008F7D7A = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +183,7 @@
 		8D60219C26415CE6008F7D7A /* NearMe */ = {
 			isa = PBXGroup;
 			children = (
+				8D2294A1264B0CA30072BD08 /* View */,
 				8D2294772649E7630072BD08 /* Persistence */,
 				8DCF914926440D9C00B20412 /* Scene */,
 				8DCF9107264313CD00B20412 /* Model */,
@@ -282,6 +306,7 @@
 		8DCF914926440D9C00B20412 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				8D2294A0264B0C380072BD08 /* VenueDetail */,
 				8D2294692649CB790072BD08 /* LocationPermisonView */,
 				8DCF914F26440DE500B20412 /* VenuesList */,
 			);
@@ -434,6 +459,7 @@
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
 				8D2294732649CBD70072BD08 /* LocationPermisonViewModel.swift in Sources */,
 				8D2294792649E7A30072BD08 /* StorageController.swift in Sources */,
+				8D2294A3264B0CC60072BD08 /* MapView.swift in Sources */,
 				8D22947E2649EAF80072BD08 /* UserDefaults+Extension.swift in Sources */,
 				8D2294902649EFB70072BD08 /* Coordinate+distanceFrom.swift in Sources */,
 				8D229495264AE70E0072BD08 /* Coordinate.swift in Sources */,
@@ -443,6 +469,8 @@
 				8DCF91212643216100B20412 /* BaseResponses.swift in Sources */,
 				8DCF916626446F4600B20412 /* LocationFetcher.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,
+				8D2294B5264B0DAD0072BD08 /* VenueDetailView.swift in Sources */,
+				8D2294A8264B0CEF0072BD08 /* CircleImage.swift in Sources */,
 				8DCF913B26440A0C00B20412 /* Location.swift in Sources */,
 				8D22948B2649ED3F0072BD08 /* Publisher+sinkToResult.swift in Sources */,
 				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,

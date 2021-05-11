@@ -9,7 +9,7 @@ import CoreLocation
 import Foundation
 
 extension Location {
-    var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    var coordinate: Coordinate {
+        return Coordinate(latitude: latitude, longitude: longitude)
     }
 }

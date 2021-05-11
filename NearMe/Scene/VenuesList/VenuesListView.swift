@@ -14,7 +14,7 @@ struct VenuesListView: View {
         NavigationView {
             List {
                 ForEach(viewModel.venues) { venue in
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: VenueDetailView(venue: venue)) {
                         VenueRow(venue: venue)
                     }
                 }
