@@ -15,6 +15,6 @@ protocol VenueService {
     
     func getNearVenuses(latitude: Double, longitude: Double, page: Int) -> ResultPublisher<Venue.ExploreResponse>
     
-    func getVenues(id: String) -> ResultPublisher<Venue>
+    func getVenuesDetail(id: String) -> ResultPublisher<Venue>
     
 }
