@@ -10,9 +10,11 @@ import Foundation
 protocol StorageController {
     func saveVenues(venues: [Venue])
     func fetchVenues() -> [Venue]
+    func removeVenues()
 }
 
 class FileStroageController: StorageController {
+  
     private let documentsDirectoryURL = FileManager.default
         .urls(for: .documentDirectory, in: .userDomainMask)
         .first!
@@ -29,8 +31,6 @@ class FileStroageController: StorageController {
         guard let data = try? encoder.encode(venues) else { return }
         try? data.write(to: venuesFileURL)
          
-         
-        
     }
     
     func fetchVenues() -> [Venue] {
@@ -38,6 +38,10 @@ class FileStroageController: StorageController {
         let decoder = JSONDecoder()
         let venues = try? decoder.decode([Venue].self, from: data)
         return venues ?? []
+    }
+    
+    func removeVenues() {
+       try? FileManager.default.removeItem(at: venuesFileURL)
     }
     
     

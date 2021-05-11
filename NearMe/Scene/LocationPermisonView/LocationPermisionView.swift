@@ -27,23 +27,24 @@ struct LocationPermisionView: View {
                     destination: VenuesListView(viewModel: .init(userLocation: viewModel.currentLocation!)).navigationBarHidden(true),
                     isActive: isLocationFetched,
                     label: {
-                        VStack {
-                            Text("Fetching your location")
-                            ProgressView()
-                        }.offset(y: -50)
+                        EmptyView()
                        
                     })
                     
-                    .onAppear {
-                        viewModel.fetchUserLocation()
-                    }
-                    .alert(isPresented: isErrorOccured, content: {
-                        showAlert()
-                })
+               
                 } else {
-                    /*@START_MENU_TOKEN@*/EmptyView()/*@END_MENU_TOKEN@*/
+                    VStack {
+                        Text("Fetching your location")
+                        ProgressView()
+                    }.offset(y: -50)
                 }
             }
+            .onAppear {
+                viewModel.fetchUserLocation()
+            }
+            .alert(isPresented: isErrorOccured, content: {
+                showAlert()
+        })
                 
                 
         }.navigationBarHidden(true)
@@ -59,7 +60,7 @@ struct LocationPermisionView: View {
         let primartTitle = viewModel.locationError == .error ? "Retry" : "Go to Setting"
         let primaryButton = Alert.Button.default(Text(primartTitle)) {
             if viewModel.locationError == .error {
-                viewModel.fetchUserLocation()
+                viewModel.retryFetchingLocation()
             } else {
                 
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {

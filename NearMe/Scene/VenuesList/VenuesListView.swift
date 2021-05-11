@@ -55,9 +55,3 @@ struct VenuesListView: View {
     }
 }
 
-struct VenuesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        VenuesListView(viewModel: .init(userLocation: .init()))
-        
-    }
-}

@@ -10,6 +10,11 @@
 		8D22946B2649CB940072BD08 /* LocationPermisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22946A2649CB940072BD08 /* LocationPermisionView.swift */; };
 		8D2294732649CBD70072BD08 /* LocationPermisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294722649CBD70072BD08 /* LocationPermisonViewModel.swift */; };
 		8D2294792649E7A30072BD08 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294782649E7A20072BD08 /* StorageController.swift */; };
+		8D22947E2649EAF80072BD08 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22947D2649EAF70072BD08 /* UserDefaults+Extension.swift */; };
+		8D2294832649EB320072BD08 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2294822649EB320072BD08 /* UserDefault.swift */; };
+		8D22948B2649ED3F0072BD08 /* Publisher+sinkToResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22948A2649ED3F0072BD08 /* Publisher+sinkToResult.swift */; };
+		8D2294902649EFB70072BD08 /* Coordinate+distanceFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D22948F2649EFB70072BD08 /* Coordinate+distanceFrom.swift */; };
+		8D229495264AE70E0072BD08 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D229494264AE70E0072BD08 /* Coordinate.swift */; };
 		8D60219E26415CE6008F7D7A /* NearMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219D26415CE6008F7D7A /* NearMeApp.swift */; };
 		8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60219F26415CE6008F7D7A /* ContentView.swift */; };
 		8D6021A226415CEA008F7D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6021A126415CEA008F7D7A /* Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		8D22946A2649CB940072BD08 /* LocationPermisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermisionView.swift; sourceTree = "<group>"; };
 		8D2294722649CBD70072BD08 /* LocationPermisonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermisonViewModel.swift; sourceTree = "<group>"; };
 		8D2294782649E7A20072BD08 /* StorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		8D22947D2649EAF70072BD08 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		8D2294822649EB320072BD08 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		8D22948A2649ED3F0072BD08 /* Publisher+sinkToResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+sinkToResult.swift"; sourceTree = "<group>"; };
+		8D22948F2649EFB70072BD08 /* Coordinate+distanceFrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+distanceFrom.swift"; sourceTree = "<group>"; };
+		8D229494264AE70E0072BD08 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		8D60219A26415CE6008F7D7A /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60219D26415CE6008F7D7A /* NearMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeApp.swift; sourceTree = "<group>"; };
 		8D60219F26415CE6008F7D7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,6 +216,7 @@
 				8DCF912E264405BA00B20412 /* BaseModels */,
 				8DCF91082643146E00B20412 /* Venue.swift */,
 				8DCF913A26440A0C00B20412 /* Location.swift */,
+				8D229494264AE70E0072BD08 /* Coordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 			children = (
 				8DCF913F26440BF100B20412 /* Extensions */,
 				8DCF916526446F4500B20412 /* LocationFetcher.swift */,
+				8D2294822649EB320072BD08 /* UserDefault.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,6 +272,9 @@
 			children = (
 				8DCF9126264405AA00B20412 /* Bool+Extension.swift */,
 				8DCF914126440C1C00B20412 /* Location+Extension.swift */,
+				8D22947D2649EAF70072BD08 /* UserDefaults+Extension.swift */,
+				8D22948A2649ED3F0072BD08 /* Publisher+sinkToResult.swift */,
+				8D22948F2649EFB70072BD08 /* Coordinate+distanceFrom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -415,9 +430,13 @@
 				8DCF911C26431ED000B20412 /* VenueService.swift in Sources */,
 				8DCF9127264405AA00B20412 /* Bool+Extension.swift in Sources */,
 				8DCF915126440DF900B20412 /* VenuesListViewModel.swift in Sources */,
+				8D2294832649EB320072BD08 /* UserDefault.swift in Sources */,
 				8DCF91112643156B00B20412 /* VenueServiceImpl.swift in Sources */,
 				8D2294732649CBD70072BD08 /* LocationPermisonViewModel.swift in Sources */,
 				8D2294792649E7A30072BD08 /* StorageController.swift in Sources */,
+				8D22947E2649EAF80072BD08 /* UserDefaults+Extension.swift in Sources */,
+				8D2294902649EFB70072BD08 /* Coordinate+distanceFrom.swift in Sources */,
+				8D229495264AE70E0072BD08 /* Coordinate.swift in Sources */,
 				8DCF90F4264307D200B20412 /* Endpoint+URL.swift in Sources */,
 				8DCF915E26445D3E00B20412 /* VenueRow.swift in Sources */,
 				8DCF914B26440DDA00B20412 /* VenuesListView.swift in Sources */,
@@ -425,6 +444,7 @@
 				8DCF916626446F4600B20412 /* LocationFetcher.swift in Sources */,
 				8DCF91092643146E00B20412 /* Venue.swift in Sources */,
 				8DCF913B26440A0C00B20412 /* Location.swift in Sources */,
+				8D22948B2649ED3F0072BD08 /* Publisher+sinkToResult.swift in Sources */,
 				8D6021A026415CE6008F7D7A /* ContentView.swift in Sources */,
 				8DCF90FE26430A8700B20412 /* NetworkControllerImpl.swift in Sources */,
 				8DCF90EC2643073200B20412 /* Endpoint.swift in Sources */,

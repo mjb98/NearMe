@@ -9,13 +9,11 @@ import CoreLocation
 import Foundation
 
 class LocationPermsionViewModel: ObservableObject {
-    
-    @Published var currentLocation: CLLocationCoordinate2D? = nil
+    @Published var currentLocation: Coordinate? = nil
     @Published var locationError: LocationError? = nil
-     private var locationFethcer: LocationFetcher
+    private var locationFethcer: LocationFetcher
   
 
-    
     init(locationFethcer: LocationFetcher = .init()) {
         self.locationFethcer = locationFethcer
         configLocationFetcher()
@@ -26,11 +24,16 @@ class LocationPermsionViewModel: ObservableObject {
        
     }
     
+    func retryFetchingLocation() {
+        locationError = nil
+        locationFethcer.retry()
+    }
+        
     func configLocationFetcher() {
      
         locationFethcer.userLocationUpdated = { [weak self] location  in
-            self?.currentLocation = location
-            
+            self?.locationError = nil
+            self?.currentLocation = location != nil ? Coordinate(location: location!) : nil
         }
         locationFethcer.errorOccuredWhenFetchingLocation = { [weak self] error  in
             self?.locationError = error

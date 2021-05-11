@@ -14,47 +14,60 @@ class VenuesListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     private let service: VenueService
+    private let storageController: StorageController
     private var subscriptions = Set<AnyCancellable>()
-    private var userCurrentLocation: CLLocationCoordinate2D
+    private var userCurrentLocation: Coordinate
 
     
-    init(userLocation: CLLocationCoordinate2D, service: VenueService = VenueServiceImpl(), locationFethcer: LocationFetcher = LocationFetcher()) {
+    init(userLocation: Coordinate, service: VenueService = VenueServiceImpl(), storageController: StorageController = FileStroageController(), locationFethcer: LocationFetcher = LocationFetcher()) {
         self.service = service
+        self.storageController = storageController
         self.userCurrentLocation = userLocation
-        
-        prepateLocationFethcer()
-    }
-    
-    private func prepateLocationFethcer() {
+        handleOnlineFirst()
        
+    }
+    
+    private func handleOnlineFirst() {
+        guard let lastLocation = UserDefaults.lastKnownLocation else { return }
+        let distance = userCurrentLocation.distanceFrom(lastLocation)
+        if distance <= 100 {
+            self.venues = storageController.fetchVenues()
+        } else {
+            UserDefaults.lastKnownLocation = nil
+            storageController.removeVenues()
+        }
         
     }
     
+    private func persistVenuesData() {
+        UserDefaults.lastKnownLocation = userCurrentLocation
+        self.storageController.saveVenues(venues: self.venues)
+    }
+  
     func getVenues() {
         if !isLoading {
             error = nil
             isLoading = true
             service.getNearVenuses(latitude: userCurrentLocation.latitude, longitude: userCurrentLocation.longitude, page: self.venues.count)
                 .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { [self] (completion) in
-                    switch completion {
-                    case let .failure(error):
+                .sinkToResult { [weak self] result in
+                    guard let self = self else { return}
+                    self.isLoading = false
+                    switch result {
+                    case .success(let data):
+                        if let result = data.response {
+                            let newVenues = result.groups
+                                .map(\.items).joined().map(\.venue)
+                            self.venues.append(contentsOf: newVenues)
+                            self.persistVenuesData()
+                            self.isMoreDataAvaialbe = data.response?.totalResults ?? .max > self.venues.count
+                        } else {
+                            self.error = NetworkError.badRequest(description: data.meta.errorDetail ?? "cannot fetch data")
+                        }
+                    case .failure(let error):
                         self.error = error
-                        self.isLoading = false
-                    case .finished:
-                        isLoading = false
+                       
                     }
-                }) { venues in
-                    
-                    if let result = venues.response {
-                        let newVenues = result.groups
-                            .map(\.items).joined().map(\.venue)
-                        self.venues.append(contentsOf: newVenues)
-                        self.isMoreDataAvaialbe = venues.response?.totalResults ?? .max > self.venues.count
-                    } else {
-                        self.error = NetworkError.badRequest(description: venues.meta.errorDetail ?? "cannot fetch data")
-                    }
-                    
                 }
                 .store(in: &subscriptions)
         }
@@ -62,4 +75,6 @@ class VenuesListViewModel: ObservableObject {
     
     
 }
+
+
 

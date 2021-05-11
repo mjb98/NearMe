@@ -18,10 +18,15 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         manager.delegate = self
+
     }
 
     func start() {
         manager.requestWhenInUseAuthorization()
+    }
+    
+    func retry() {
+        manager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -37,8 +42,12 @@ class LocationFetcher: NSObject, CLLocationManagerDelegate {
         return
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if manager.authorizationStatus != .denied, manager.location == nil, manager.authorizationStatus != .notDetermined {
-            errorOccuredWhenFetchingLocation?(.error)
+        if (manager.authorizationStatus != .denied  || manager.authorizationStatus != .notDetermined) && manager.location == nil {
+            if manager.location != nil {
+                errorOccuredWhenFetchingLocation?(.error)
+            }
+            manager.stopUpdatingLocation()
+            
         }
       
     }
