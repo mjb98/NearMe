@@ -19,7 +19,7 @@ class VenuesListViewModel: ObservableObject {
     private var userCurrentLocation: Coordinate
 
     
-    init(userLocation: Coordinate, service: VenueService = VenueServiceImpl(), storageController: StorageController = FileStroageController(), locationFethcer: LocationFetcher = LocationFetcher()) {
+    init(userLocation: Coordinate, service: VenueService = NetworkVenueService(), storageController: StorageController = FileStroageController(), locationFethcer: LocationFetcher = LocationFetcher()) {
         self.service = service
         self.storageController = storageController
         self.userCurrentLocation = userLocation

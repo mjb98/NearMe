@@ -26,8 +26,3 @@ struct VenueRow: View {
     }
 }
 
-struct VenueRow_Previews: PreviewProvider {
-    static var previews: some View {
-        VenueRow(venue: .init(id: "", name: "test", location: nil))
-    }
-}

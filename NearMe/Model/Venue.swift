@@ -11,6 +11,8 @@ struct Venue: Codable, Identifiable {
     let id: String
     let name: String
     let location: Location?
+    let description: String?
+    let bestPhoto: Photo?
     
 }
 
@@ -27,6 +29,11 @@ extension Venue {
             }
         }
         
+    }
+    
+    struct Photo: Codable {
+        let prefix: String
+        let suffix: String
     }
     
 }

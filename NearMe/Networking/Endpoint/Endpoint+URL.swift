@@ -20,6 +20,7 @@ extension Endpoint {
         let stringDate = dateFormatter.string(from: lastWeekDate)
         return [URLQueryItem(name: "client_id", value: clientID), URLQueryItem(name: "client_secret", value: clientSecret), .init(name: "v", value: stringDate)]
     }
+    
     var url: URL {
         var components = URLComponents()
         components.scheme = "https"
@@ -41,6 +42,11 @@ extension Endpoint {
 extension Endpoint {
     static func nearVenus(latitude: Double, longitude: Double, offset: Int, sortByDistance: Bool = true) -> Self {
         let queryParams = [URLQueryItem(name: "ll", value: "\(latitude),\(longitude)"), URLQueryItem(name: "sortByDistance", value: String(sortByDistance.intValue)), URLQueryItem(name: "offset", value: String(offset))]
+        return Endpoint(path: "/explore", queryItems: queryParams)
+    }
+    
+    static func venueDetail(id: String) -> Self {
+        let queryParams = [URLQueryItem(name: "VENUE_ID", value: id)]
         return Endpoint(path: "/explore", queryItems: queryParams)
     }
 }
