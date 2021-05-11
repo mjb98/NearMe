@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>SPNDMPCAQ14UKMMMYAP1WWUDPUHHQ12ZZ4I2WK0Y31EGEPAZ</string>
+	<string>YOUR_CI</string>
 	<key>CLIENT_SECRET</key>
-	<string>HOHPBDHRPN0AKVRMKLLKBMU3G1HCJ5KQB04CYHK2X0HRA2ZQ</string>
+	<string>YOUR_CS</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -50,9 +50,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Will you allow this app to always know your location?</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Do you allow this app to know your current location?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow this app to know your current location?</string>
 </dict>
 </plist>

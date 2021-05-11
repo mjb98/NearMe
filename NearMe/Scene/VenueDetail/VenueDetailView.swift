@@ -18,13 +18,13 @@ struct VenueDetailView: View {
                 .frame(height: min(UIScreen.main.bounds.height/3, 300))
             
             if let url = viewModel.imageUrl {
-                AsyncImage(url: url) {
-                    CircleImage(image: .init("placeholder"))
+                AsyncImage(url: url, isCircular: true) {
+                    placeHolderImage
                         
                 }.offset(y: -125)
                 .padding(.bottom, -130)
             } else {
-                CircleImage(image: .init("placeholder"))
+                placeHolderImage
                     .offset(y: -125)
                     .padding(.bottom, -130)
             }
@@ -69,6 +69,10 @@ struct VenueDetailView: View {
         }
     }
     
+    private var placeHolderImage: some View {
+        CircleImage(image: .init("placeholder"))
+    }
 }
+
 
 
