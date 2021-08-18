@@ -1,6 +1,6 @@
 # Near Me
 
-This is a sample iOS 14+ Swiftui project using:
+This is a sample iOS 14+ SwiftUi project using:
 
 -  Combine
 -  MVVM
